@@ -1,0 +1,19 @@
+﻿PS C:\chef> chef-client -l debug -j C:\chef\runlist_sql_post.json --logfile C:\chef\chef-client.log
+Starting Chef Client, version 12.19.36
+resolving cookbooks for run list: ["cookbook_cvgx_windows2012r2-sql_postinstall::default"]
+Synchronizing Cookbooks:
+  - cookbook_cvgx_windows2012r2-sql_postinstall (0.2.5)
+Installing Cookbook Gems:
+Compiling Cookbooks...
+Converging 5 resources
+Recipe: cookbook_cvgx_windows2012r2-sql_postinstall::default
+  * file[C:\test01.txt] action create
+    - create new file C:\test01.txt
+    - update content in file C:\test01.txt from none to f8a3c4
+    --- C:\test01.txt   2017-06-02 12:31:19.000000000 -0400
+    +++ C:\chef-test0120170602-404-mf0as8.txt   2017-06-02 12:31:19.000000000 -0400
+    @@ -1 +1,2 @@
+    +Resource before service change
+  * windows_service[SQLSERVERAGENT stop] action stop
+    - stop service windows_service[SQLSERVERAGENT stop]
+  * windows_service[MSSQLSERVER] action restartPS C:\chef>
