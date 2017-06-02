@@ -22,7 +22,7 @@ Windows_Server-2012-R2_RTM-English-64Bit-Base-2017.05.10 - ami-271b6d31
 
 ## Replication Case
 
-You can use reproduce the problem by using the following resources in a cookbook. You can also download the test cookbook in this zip file.
+You can use reproduce the problem by using the following resources in a cookbook.
 
 ```Ruby
 #STEP 01 - Resource before service change
@@ -57,6 +57,9 @@ file 'C:\\test02.txt' do
   content 'Resource after service change'
 end
 ```
+
+The cookbook is also available in this repo.
+https://github.com/QuantumGrizzly/Chef-windows_service_issue/tree/master/cookbook_cvgx_windows2012r2-sql_postinstall
 
 JSON file I am using to run the cookbook
 ```json
@@ -145,6 +148,13 @@ Recipe: cookbook_cvgx_windows2012r2-sql_postinstall::default
 No stacktrace.out (chef-client fails without producing one)
 chef-client debug log available here:
 - SQL Server Service Success
+https://github.com/QuantumGrizzly/Chef-windows_service_issue/blob/master/A-MSSQL-Success/chef-client.txt
+
 - SQL Server Service Failure
+https://github.com/QuantumGrizzly/Chef-windows_service_issue/blob/master/A-MSSQL-Failure/chef-client.txt
+
 - AWS Service Success
+https://github.com/QuantumGrizzly/Chef-windows_service_issue/blob/master/B-AWS-Success/chef-client.txt
+
 - AWS Service Failure
+https://github.com/QuantumGrizzly/Chef-windows_service_issue/blob/master/B-AWS-Failure/chef-client.txt
